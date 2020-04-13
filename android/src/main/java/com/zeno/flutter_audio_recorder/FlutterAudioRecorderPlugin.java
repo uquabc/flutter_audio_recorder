@@ -354,7 +354,7 @@ public class FlutterAudioRecorderPlugin implements MethodCallHandler, PluginRegi
     header[29] = (byte) ((byteRate >> 8) & 0xff);
     header[30] = (byte) ((byteRate >> 16) & 0xff);
     header[31] = (byte) ((byteRate >> 24) & 0xff);
-    header[32] = (byte) (1); // block align
+    header[32] = (byte) (channels * 16 / 8); // block align
     header[33] = 0;
     header[34] = RECORDER_BPP; // bits per sample
     header[35] = 0;
